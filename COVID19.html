@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simulation Suite</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- LOADING SCREEN -->
+  <div id="loader">
+    <div class="spinner"></div>
+    <p>Loading…</p>
+  </div>
+
+  <!-- MAIN CONTENT (hidden until load) -->
+  <div id="content" style="display:none;">
+    <div class="nrtop">
+      <h1 id="nrheading">SEIQR Model (COVID‑19 Simulation)</h1>
+    </div>
+    <form id="seiqr-form" class="form2">
+      <p>
+        <label>Population N:
+          <input type="number" id="popN" placeholder="e.g. 1e6" required />
+        </label>
+      </p>
+      <p>
+        <label>β (transmission rate):
+          <input type="number" id="beta" step="any" placeholder="e.g. 0.3" required />
+        </label>
+      </p>
+      <p>
+        <label>σ (latent → infectious):
+          <input type="number" id="sigma" step="any" placeholder="e.g. 0.2" required />
+        </label>
+      </p>
+      <p>
+        <label>α (quarantine rate):
+          <input type="number" id="alpha" step="any" placeholder="e.g. 0.05" required />
+        </label>
+      </p>
+      <p>
+        <label>γ (recovery rate I→R):
+          <input type="number" id="gamma" step="any" placeholder="e.g. 0.1" required />
+        </label>
+      </p>
+      <p>
+        <label>δ (recovery rate Q→R):
+          <input type="number" id="delta" step="any" placeholder="e.g. 0.07" required />
+        </label>
+      </p>
+      <p>
+        <label>μ (mortality fraction):
+          <input type="number" id="mu" step="any" placeholder="e.g. 0.02" required />
+        </label>
+      </p>
+      <button type="submit">Run SEIQR Simulation</button>
+    </form>
+    <div class="actual" id="seiqr-visual"></div>
+  </div>
+
+  <script src="script2.js"></script>
+</body>
+</html>
